@@ -1,0 +1,31 @@
+#titulo {
+    color: red;
+
+}
+
+.trabajador {
+    background-color: grey;
+}
+
+.etiqueta {
+    font-weight: bold;
+    text-decoration : underline;
+    
+}
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+#trabajador1 {
+    color: blue;  
+}
+#trabajador2 {
+    color: green;
+}
+.datos-personales {
+    border: 2px solid black;
+}
+.estudios {
+    border: 5px double black;
+}
+
