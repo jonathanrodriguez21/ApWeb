@@ -1,0 +1,83 @@
+/* Reset y base */
+/* box-sizing: para que tenga en cuenta el padding y el margin en el tamaño total */
+* {
+    box-sizing: border-box;
+}
+
+/* Establecemos altura completa de pagina */
+html, body {
+    height: 100%;
+}
+
+/* Configuracion general del body */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #f0f0f0;
+}
+
+/* Centramos y rellenamos la cabecera */
+.cabecera {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Titilo de la cabecera sin margenes extra y color destacado */
+.titulo {
+    margin: 0;
+    color: rgb(75, 73, 163)
+}
+
+/* Zona principal (main): aplicamos relleno */
+#contenido-principal {
+    padding: 1rem;
+}
+
+/* Clase "tarjeta": usado para agrupar secciones visualmente */
+.tarjeta {
+    background: #fff;
+    width:  min(900px,95%);
+    margin: 1.5rem auto;      /* Centramos el contenido */
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    border: 1px solid #ffc0c0;
+}
+
+
+/*Listas en dos columnas: usamos flexbox para alinear dos elementos en horizontal*/
+.listas {
+    display: flex;           /* Contenedor flexible */
+    flex-direction: row;      /* Alineacion en fila */
+    gap: 2rem;               /* Espacio entre columnas */
+    flex-wrap: wrap;       /* Permitir que las columnas bajen de fila si no caben */
+/* Estilo pie de pagina */
+}
+
+/*Ajustes visuales de las listas*/
+.lista {
+    padding-left: 20px;      /* Espacio para viñetas */
+}
+
+.lista li {
+    margin: 0.25rem 0;      /* Espacio vertical entre los elementos de las listas */
+}
+
+/* Tabla:
+    -width: ocupe todo el ancho
+    -border-collapse: unir los bordeos internos */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/*estilo de pie de pagina*/
+.pie {
+    color: #6d6666;
+    font-size: 14px;
+    background: #acacac;
+    text-align: center;
+    padding: 1rem;
+}
