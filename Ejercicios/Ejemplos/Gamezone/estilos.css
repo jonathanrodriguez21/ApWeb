@@ -93,8 +93,12 @@ body {
     padding: 1.5rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     border: 1px solid #ffc0c0;
+    transition: transform 0.3s;
 }
 
+.tarjeta:hover {
+    transform: scale(1.05);
+}
 
 /*Listas en dos columnas: usamos flexbox para alinear dos elementos en horizontal*/
 .listas {
