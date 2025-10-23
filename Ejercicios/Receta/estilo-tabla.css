@@ -16,7 +16,7 @@ th {
 
 .receta {
     background-color: white;
-    color: #333
+    color: #333;
     max-width: 800px;
     box-shadow:0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
@@ -43,13 +43,13 @@ body {
     flex-direction: column;
 }
 header {
-    background-color: #F5A623.;
+    background-color: #F5A623;
     color: white;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content:center ;
     
 }
 header h1 {
@@ -59,7 +59,7 @@ header h1 {
 main {
     background-color: beige;
     padding: 2rem
-    align-items: center;
+    
 }
 footer {
     background-color: #333;
