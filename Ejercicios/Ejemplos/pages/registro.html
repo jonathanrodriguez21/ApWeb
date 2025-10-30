@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pagina web sobre videojuegos">
+    <link rel ="stylesheet" href="estilos.css">
+    <title>GameZone - Tu portal de videojuegos</title>
+</head>
+<body>
+    <header class="cabecera">
+        <div class="marca">
+            <img src="imagenes/gamezone-logo.png" alt="Logotipo GameZone" class="logo">
+            
+        </div>
+        
+        <!-- Menu de navegacion -->
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Guias</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+<section class="tarjeta">
+            <h2> Registro de usuario</h2>
+            <form name="register" action="registro.html" method="post">
+
+                <!-- Campo de texto -->
+                <label for="nombre">Nombre de usuario:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellidos" required>
+
+                <!-- Contraseña -->
+                <label for="clave">Contraseña:</label>
+                <input type="password" id="clave" name="clave" minlegth="6" maxlegth="12" required>
+
+                <!-- Correo electronico -->
+                <label for="correo">Email:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+                <!-- Campo DNI/NIE -->
+                <label for="dni">DNI/NIE:</label>
+                <input type="text" id="dni" name="identidad" placeholder="12345678A/X1234567B"
+                pattern="(([0-9]{8}|[X-Zx-z]{1} [0-9]{7}))[A-Za-z]{1}" required>
+                <button type="submit">Registrarse</button>
+
+                <footer class="pie">
+        <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>

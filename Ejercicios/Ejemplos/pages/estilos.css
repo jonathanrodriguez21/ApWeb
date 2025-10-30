@@ -154,3 +154,12 @@ body {
     text-align: center;
     padding: 1rem;
 }
+
+/* Formularios */
+input:invalid {
+    border: 1px solid red;
+}
+
+input:valid {
+    border: 1px solid green;
+}

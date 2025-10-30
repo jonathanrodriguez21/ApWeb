@@ -83,9 +83,37 @@
             </tbody>
         </table>
         </section>
+        <!--Formulario de busqueda-->
+        <section class="tarjeta">
+            <form name="buscar-juego" action="buscar.html" method="get">
+                <!-- label conecta visualmente y funcionalmente con el campo (for <-> id)
+                Sirve para asociar un texto descriptivo a un elemento del formulario 
+                En este ejemplo lo conectamos en el input busqueda-->
+                <label for="busqueda">Buscar juego:</label>
+                <input type="search" id="busqueda" name="busqueda"
+                placeholder="Escribe el nombre del juego...">
+                <button type="submit">Buscar</button>
+
+
+            </form>
+        </section>
+
+        <!-- Formulario de registro -->
+        <section class="tarjeta">
+            <h2> Registro de usuario</h2>
+            
+
+                <!-- Boton de registro -->
+                <a href="registro.html">
+                <button>Registrarse</button>
+                </a>
+            </form>
+        </section>
+
+
     </main>
     
-    <footer class="pie">
+<footer class="pie">
         <p>&copy; 2025 Todos los derechos reservados.</p>
     </footer>
 </body>
