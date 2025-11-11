@@ -1,0 +1,297 @@
+/* Reset y base */
+/* box-sizing: para que tenga en cuenta el padding y el margin en el tamaño total */
+* {
+    box-sizing: border-box;
+}
+
+/* Establecemos altura completa del documento */
+html, body {
+    height: 100%;
+}
+
+/* El body se convierte en contenedor flex
+    - flex-direction: column -> apila verticalmente el header, main y footer 
+    - min-height: 100vh -> ocupa toda la altura de la ventana (vh = viewport height)
+*/
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;      /* Altura total del viewport */
+}
+
+/* Centramos y rellenamos la cabecera */
+/* CABECERA con FLEX: dos zonas -> logo/titulo (marca) y menú (nav)*/
+.cabecera {
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+    background: #2C3E50;
+    display: flex;
+    justify-content: space-between; /* Posiciona marca izq. y nav derecha */
+    align-items: center;            /* Centra verticalmente */
+}
+
+/* Tamaño de la imagen (logo) */
+.logo {
+    height: 100px;
+    width: auto;
+    /* display: block; */
+}
+
+/* Título de la cabecera sin márgenes extra y color destacado */
+/* .titulo {
+    margin: 0;
+    color: #2C3E50;
+} */
+
+/* Menú de navegación con flex */
+.menu {
+    list-style-type: none;
+    display: flex;          /* Para colocar los enlaces/ítems en línea */
+    flex-direction: row;    /* Por defecto es row, por tanto podemos prescindir de esta línea */
+    gap: 1.5rem;            /* Espacio entre enlaces */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos básicos de los enlaces del menú */
+.menu a {
+    color: #fff;
+    text-decoration: none;      /* Elimina el subrayado */
+    font-weight: bold;          /* Aplica negrita a los enlaces */
+    /* padding: 1rem; */
+}
+
+/* Efecto hover en enlaces */
+.menu a:hover {
+    color: #E74C3C;
+    /* background-color: #fff; */
+}
+
+
+/* Zona principal (main): aplicamos relleno */
+#contenido-principal {
+    padding: 1rem;
+    flex-grow: 1;           /*IMPORTANTE para "empujar" al footer hacia abajo*/
+    /* flex: 1; */          /* Atajo de las propiedades flex-grow y flex-basis */
+
+    display: flex;          /* Convierto al main como contenedor flexible */
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Clase "tarjeta": usado para agrupar secciones visualmente */
+.tarjeta {
+    background: #fff;
+    width: min(900px, 95%);
+    margin: 1.5rem auto;      /* Centramos el contenido */
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    border: 1px solid #ddd;
+}
+
+/*Listas en dos columnas: usamos flexbox para alinear dos elementos en horizontal*/
+.listas {
+    display: flex;          /* Contenedor flexible */
+    flex-direction: row;    /* Los items se coloquen en filas */
+    gap: 2rem;              /* Hueco entre columnas */
+    flex-wrap: wrap;        /* Permite saltar a la siguiente línea en pantallas pequeñas */
+    /* flex-flow: row wrap; */
+}
+
+/* Ajustes visuales de las listas */
+.lista {
+    padding-left: 20px;     /*Espacio para las viñetas*/
+}
+
+.lista li {
+    margin: 0.25rem 0;      /* Espacio vertical entre los elementos de las listas */
+}
+
+/* Tabla: 
+    - width: ocupe todo el ancho
+    - border-collapse: unir los bordes internos
+*/
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/* Bordes y relleno de la tabla */
+.tabla th, .tabla td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Cabecera de la tabla con estilo diferenciado */
+.tabla th {
+    background: #2C3E50;
+    color: #fff;
+    text-align: center;
+}
+
+/* Contenido de tabla alineado a la izquierda */
+.tabla td {
+    text-align: left;
+    white-space: nowrap;    /* Evita saltos de línea en celdas */
+}
+
+/* Estilo pie de página */
+.pie {
+    color: #7f8c8d;
+    font-size: 14px;
+    background: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* FORMULARIOS */
+input{
+    border: 1px solid #2C3E50;
+}
+input:focus:valid {
+    border: 1px solid green ;
+}
+
+input:focus:invalid {
+    border: 1px solid red ;
+}
+
+
+/* ===== FORMULARIO DE REGISTRO ===== */
+.form-registro {
+    background-color: #fff;
+    border: 4px solid darkgoldenrod;
+    border-radius: 7px;
+    width: 380px;
+    padding: 1rem;
+    display: flex;          /* los fieldset se colocan de manera flexible */
+    flex-direction: column; /* los fieldset se colocan uno debajo del otro */
+    gap: 10px;
+    color: firebrick;     /* se aplica el color rojo al contenido que haya dentro de fieldset */
+    margin: 0 auto;         /* Centro el formulario dentro de la tarjeta */
+}
+
+.form-fila {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.form-fila label {
+    font-weight: bold;
+}
+
+/* Selector button por atributo */
+button[type="submit"] {
+    background-color: firebrick;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;            /* Aparece una mano apuntadora al hacer hover */
+}
+
+/* Selector button por atributo + pseudoclase hover*/
+button[type="submit"]:hover {
+    background-color: darkred;
+}
+
+/* ============================
+    SECCION TIENDA
+============================ 
+*/
+
+/* Aplicar estos estilos solo a los elementos que tengan las clases tienda y tarjeta a la vez */
+.tienda.tarjeta {
+    width: min(1600px, 95%);
+    /* flex direction: row; */
+    flex-wrap:wrap;
+    gap: 16px;
+    justify-content:center;              /* Centrar horizontalmente */
+
+}
+
+/* Card individual */
+.card {
+    width: 280px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px ,12px rgba(0,0,0,0.3);
+    background-color: #fff;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Imagen de la card */
+.card-imagen {
+    width: 100%;
+    height: 180px;
+    object-fit: none;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Explicacion object-fit: contain asegura que la imagen se vea completa
+aunque tenga proporciones diferentes, evitando recortes o deformaciones */
+
+/* Textos */
+.card-titulo {
+    font-size: 1.1rem;
+    margin: 8px 0 4px;
+    color: #333;
+}
+
+.card-descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    min-height: 3.5rem;      /* Mantiene altura uniforme aunque cambie el texto */
+
+}
+.card-precio {
+    color: #b60000;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+/* Boton de la card */
+.card-boton {
+    background-color: #2C3E50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    /*  */
+    display: inline-block;
+    padding: 10px 16px;
+}
+
+/* display: inline-block
+    se comporta como inline (se coloca en linea) pero permite aplicar propiedades de bloque (ancho,alto,margin,padding)
+    si no lo hubieramos puesto, no saltaria de linea, no puedes definir width, height ni margin-top/bottom.
+ */
+
+.grid-container {
+    display: grid;                                  /*activa el modo grid*/
+    grid-template-columns: 200px 200px 200px;       /*3 columnas de tamaño fijo*/ 
+    grid-template-rows: 100px 100px;                /* 2 filas de tamaño fijo */
+    gap: 15px;                                      /* separacion uniforme entre celdas */
+    justify-content: center;                        /*centra toda la cuadricula dentro del section */
+    background-color: #eaeaea;
+    padding: 10px;
+}
+
+
+.grid-container :nth-child(1) { background-color: red;}
+.grid-container :nth-child(2) { background-color: blue;}
+.grid-container :nth-child(3) { background-color: green;}
+.grid-container :nth-child(4) { background-color: yellow;}
+.grid-container :nth-child(5) { background-color: orange;}
+.grid-container :nth-child(6) { background-color: purple;}
