@@ -204,19 +204,25 @@ button[type="submit"]:hover {
     background-color: darkred;
 }
 
-/* ============================
+
+/* 
+======================
     SECCION TIENDA
-============================ 
+======================
 */
 
 /* Aplicar estos estilos solo a los elementos que tengan las clases tienda y tarjeta a la vez */
-.tienda.tarjeta {
+.tienda.tarjeta{
     width: min(1600px, 95%);
-    /* flex direction: row; */
-    flex-wrap:wrap;
-    gap: 16px;
-    justify-content:center;              /* Centrar horizontalmente */
+}
 
+/* Contenedor de las cards */
+.lista-cards--flex{
+    display: flex;                  /* Activo el modelo Flex*/
+    flex-direction: row;            /* Es el valor por defecto igualmente */
+    flex-wrap: wrap;                /* Permitir que las cards salten de línea si no caben */
+    gap: 16px;                      /* Espacio uniforme entre las cards */
+    justify-content: center;        /* Centrar horizontalmente */
 }
 
 /* Card individual */
@@ -224,74 +230,148 @@ button[type="submit"]:hover {
     width: 280px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px ,12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     background-color: #fff;
-    text-align: center;
+    text-align: center; 
     padding: 12px;
 }
 
 /* Imagen de la card */
-.card-imagen {
+.card-imagen{
     width: 100%;
     height: 180px;
-    object-fit: none;
+    object-fit: contain;            /* Ajustamos la imagen sin recortarla */
     background-color: #f4f4f4;
     border-radius: 8px;
     margin-bottom: 8px;
 }
 
-/* Explicacion object-fit: contain asegura que la imagen se vea completa
-aunque tenga proporciones diferentes, evitando recortes o deformaciones */
+/*  Explicación object-fit: contain asegura que la imagen se vea completa
+    aunque tenga proporciones diferentes, evitando recortes o deformaciones
+*/
 
 /* Textos */
 .card-titulo {
     font-size: 1.1rem;
-    margin: 8px 0 4px;
     color: #333;
+    margin: 8px 0 4px;
+
 }
 
 .card-descripcion {
     font-size: 0.9rem;
     color: #666;
-    min-height: 3.5rem;      /* Mantiene altura uniforme aunque cambie el texto */
-
+    min-height: 3.5em;          /* Mantiene altura uniforme aunque cambie el texto */
 }
+
 .card-precio {
     color: #b60000;
     font-weight: bold;
     margin: 8px 0;
 }
 
-/* Boton de la card */
+/* Botón de la card */
 .card-boton {
-    background-color: #2C3E50;
+    background-color: #2c3e50;
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
-    /*  */
-    display: inline-block;
+    display: inline-block;          
     padding: 10px 16px;
 }
 
 /* display: inline-block
-    se comporta como inline (se coloca en linea) pero permite aplicar propiedades de bloque (ancho,alto,margin,padding)
-    si no lo hubieramos puesto, no saltaria de linea, no puedes definir width, height ni margin-top/bottom.
- */
+    Se comporta como inline (se coloca en línea) pero permite aplicar propiedades de bloque (ancho, alto, margin, padding)
+    Si no lo hubieramos puesto, no saltaría de línea, no puedes definir width, height ni margin-top/bottom.
+*/
 
-.grid-container {
-    display: grid;                                  /*activa el modo grid*/
-    grid-template-columns: 200px 200px 200px;       /*3 columnas de tamaño fijo*/ 
-    grid-template-rows: 100px 100px;                /* 2 filas de tamaño fijo */
-    gap: 15px;                                      /* separacion uniforme entre celdas */
-    justify-content: center;                        /*centra toda la cuadricula dentro del section */
-    background-color: #eaeaea;
-    padding: 10px;
+.practica-grid.tarjeta {
+    width: min(1600px, 95%);
 }
 
+.grid-container {
+    min-height: 400px;
+    background-color: #eaeaea;
+    padding: 10px;
+    display: grid;          /* Activa el modo grid */
+    /* Definir número de columnas */
+    grid-template-columns: 75px 125px 100px;
+    /* Definir número filas */
+    grid-template-rows: 100px 100px;
+    
+    /* Añadir espacio entre celdas/items */
+    /* Atajo gap: row-gap + column-gap */
+    gap: 5px 30px;
+    /* gap: 15px; */
 
-.grid-container :nth-child(1) { background-color: red;}
-.grid-container :nth-child(2) { background-color: blue;}
-.grid-container :nth-child(3) { background-color: green;}
-.grid-container :nth-child(4) { background-color: yellow;}
-.grid-container :nth-child(5) { background-color: orange;}
-.grid-container :nth-child(6) { background-color: purple;}
+
+    /* Alineación de los ítems respecto de su celda */
+    place-items: stretch;
+    place-content: center;
+
+}
+
+.item-grid { background-color: goldenrod; }
+
+/* Para alinear una celda/ítem en particular */
+.item-5 {
+    background-color: green;
+    /* justify-self: end;
+    align-self: start; */
+    place-self: center;
+    /* order: -1; */
+}
+
+/* .grid-container :nth-child(1) { background-color: #E74C3C;}
+.grid-container :nth-child(2) { background-color: indigo ;}
+.grid-container :nth-child(3) { background-color: gold;}
+.grid-container :nth-child(4) { background-color: aquamarine}
+.grid-container :nth-child(5) { background-color: green ;}
+.grid-container :nth-child(6) { background-color: darkred ;} */
+
+.contenedor-areas {
+    display: grid;
+    min-height: 400px;
+
+    /* Fijamos número de columnas y filas */
+    grid-template-columns: 200px 3fr 1fr;
+    grid-template-rows: 2fr 5fr 1fr;
+
+    /* Plantilla de áreas - Disposición del grid */
+    grid-template-areas: 
+        "cabecera   cabecera    cabecera" 
+        "menu       principal   lateral"
+        "pie        pie         pie";
+
+    gap: 15px;
+}
+
+.area-header {
+    /* Asignamos nombre de área para el grid */
+    grid-area: cabecera;
+    background-color: blue;
+}
+
+.area-menu {
+    /* Asignamos nombre de área para el grid */
+    grid-area: menu;
+    background-color: green;
+}
+
+.area-main {
+    /* Asignamos nombre de área para el grid */
+    grid-area: principal;
+    background-color: goldenrod;
+}
+
+.area-aside {
+    /* Asignamos nombre de área para el grid */
+    grid-area: lateral;
+    background-color: aquamarine;
+}
+
+.area-footer {
+    /* Asignamos nombre de área para el grid */
+    grid-area: pie;
+    background-color: #b60000;
+}
